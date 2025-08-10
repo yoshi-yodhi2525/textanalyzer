@@ -36,7 +36,12 @@ st.set_page_config(
     page_title="X投稿分析アプリ",
     page_icon="📊",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': None,
+        'Report a bug': None,
+        'About': None
+    }
 )
 
 # タイトルと説明
@@ -60,7 +65,7 @@ search_hashtag = st.sidebar.text_input(
 )
 
 # データ読み込みと前処理
-@st.cache_data
+@st.cache_data(ttl=3600, max_entries=10)
 def load_and_process_data(file):
     """CSVファイルを読み込んで前処理を行う"""
     try:

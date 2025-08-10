@@ -1,2 +1,5 @@
 fonts-noto-cjk
 fonts-dejavu
+fonts-noto
+python3-dev
+build-essential
